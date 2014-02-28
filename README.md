@@ -1,4 +1,6 @@
 robogame
 ========
 
-ai for a robot game on robotgame.com
+AI for a robot game.
+
+Developers: Jonny Castle and Patrick Douglas
