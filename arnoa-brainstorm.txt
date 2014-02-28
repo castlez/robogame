@@ -1,0 +1,25 @@
+All my brainstorming thoughts:
+
+ALGORITHM:
+-check if in spawn zone. 
+   if yes, find open space and go there.
+   if no, continue
+
+-check surrounding area.
+    if 1 enemy:
+      if myhealth > enemyhealth:
+        attack
+      if myhealth < enemyhealth:
+         if they have less than 15, suicide
+         else back away
+    if 2 or more enemy:
+      if both less than 15 and mine less than 20, suicide
+      else back away
+    else go to move
+
+-move to center:
+  if cant go further, guard
+
+
+
+
