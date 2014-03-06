@@ -1,0 +1,59 @@
+All my brainstorming thoughts:
+
+ALGORITHM:
+-check if in spawn zone. 
+   if yes, find open space and go there.
+   if no, continue
+
+-check surrounding area.
+    if 1 enemy:
+      if myhealth > enemyhealth:
+        attack
+      if myhealth < enemyhealth:
+         if they have less than 15, suicide
+         else back away
+    if 2 or more enemy:
+      if both less than 15 and mine less than 20, suicide
+      else back away
+    else go to move
+
+-move to center:
+  if cant go further, guard
+
+
+"""
+['move', (x, y)]
+['attack', (x, y)]
+['guard']
+['suicide']
+
+location
+hp
+player_id
+robot_id
+
+Example:
+class Robot:
+    def act(self, game):
+        # if we're in the center, stay put
+        if self.location == rg.CENTER_POINT:
+            return ['guard']
+
+        # if there are enemies around, attack them
+        for loc, bot in game.robots.iteritems():
+            if bot.player_id != self.player_id:
+                if rg.dist(loc, self.location) <= 1:
+                    return ['attack', loc]
+
+        # move toward the center
+        return ['move', rg.toward(self.location, rg.CENTER_POINT)]
+
+rg.dist(loc1, loc2) - math dist
+rg.wdist(loc1, loc2) - walking dist
+rg.loc_types(loc) - invalid, normal, spawn, obstacle
+rg.locs_around(location, filter_out=('invalid',))
+rg.toward(current_loc, dest_loc)
+rg.CENTER_POINT
+"""
+
+
